@@ -1,0 +1,17 @@
+{
+    "experiment_name": "Число тактов, затраченных на выполнение алгоритма умножения матриц размера 512x512 при фиксированных параметрах (cores=8 clusters=1, l2cache, l3cache) и при различных значениях числа потоков и групп потоков.",
+    "fixed_parameters": {
+        "matrix_size": 512,
+        "clusters": 1,
+        "cores": 8,
+        "l2cache": true,
+        "l3cache": true,
+        "app": "sgemm",
+        "driver": "simx"
+    },
+    "variable_parameters": {
+        "warps": [16, 32, 64],
+        "threads": [2, 4, 8, 16]
+    },
+    "execution": "./ci/blackbox.sh --clusters={clusters} --cores={cores} --warps={warps} --threads={threads} --l2cache --l3cache --app={app} --driver={driver} -n{matrix_size}"
+}

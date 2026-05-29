@@ -1,0 +1,8 @@
+{
+    "experiment_name": "Изменение числа тактов, затраченных на выполнение алгоритма умножения матриц, при фиксированных параметрах (clusters=1, warps=8, threads=64, l2cache, l3cache) и различных значениях количества ядер.",
+    "result": {
+        "cores": [1, 2, 4, 8, 16, 32],
+        "cycles": [13574764, 58064587, 33473788, 19897057, 10962692, 11412904]
+    },
+    "execution": "./ci/blackbox.sh --clusters={clusters} --cores={cores} --warps={warps} --threads={threads} --l2cache --l3cache --app={app} --driver={driver} -n{matrix_size}"
+}
