@@ -1,0 +1,62 @@
+CONFIGS=-DNUM_CLUSTERS=1 -DNUM_CORES=28 -DNUM_WARPS=8 -DNUM_THREADS=64 -DL2_ENABLE -DL3_ENABLE
+Running: CONFIGS="-DNUM_CLUSTERS=1 -DNUM_CORES=28 -DNUM_WARPS=8 -DNUM_THREADS=64 -DL2_ENABLE -DL3_ENABLE" make -C ./ci/../runtime/simx > /dev/null
+Running: OPTS="-n512" make -C "./ci/../tests/regression/sgemm" run-simx
+make: Entering directory '/vortex/build/tests/regression/sgemm'
+LD_LIBRARY_PATH=/vortex/build/runtime: VORTEX_DRIVER=simx ./sgemm -n512
+open device connection
+data type: float
+matrix size: 512x512
+allocate device memory
+A_addr=0x10000
+B_addr=0x110000
+C_addr=0x210000
+upload matrix A buffer
+upload matrix B buffer
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+Elapsed time: 2.86949e+06 ms
+download destination buffer
+verify result
+*** error: [9363] expected=124.595078, actual=-0.001327
+*** error: [18727] expected=121.746338, actual=-0.001327
+*** error: [28091] expected=119.971039, actual=-0.001327
+*** error: [37455] expected=136.539307, actual=-0.001327
+*** error: [46819] expected=118.819641, actual=-0.001327
+*** error: [56183] expected=123.985741, actual=-0.001327
+*** error: [65547] expected=143.573105, actual=-0.001327
+cleanup
+PERF: core0: instrs=34091058, cycles=11682907, IPC=2.918029
+PERF: core1: instrs=34091058, cycles=11701839, IPC=2.913308
+PERF: core2: instrs=34091058, cycles=11689549, IPC=2.916371
+PERF: core3: instrs=34091058, cycles=11689019, IPC=2.916503
+PERF: core4: instrs=34091058, cycles=11704258, IPC=2.912706
+PERF: core5: instrs=34091058, cycles=11686026, IPC=2.917250
+PERF: core6: instrs=34091058, cycles=11707623, IPC=2.911868
+PERF: core7: instrs=34091058, cycles=11682931, IPC=2.918023
+PERF: core8: instrs=34083788, cycles=11701911, IPC=2.912668
+PERF: core9: instrs=34083788, cycles=11691918, IPC=2.915158
+PERF: core10: instrs=34083788, cycles=11691202, IPC=2.915337
+PERF: core11: instrs=34083788, cycles=11704603, IPC=2.911999
+PERF: core12: instrs=34083788, cycles=11685960, IPC=2.916644
+PERF: core13: instrs=34083788, cycles=11707252, IPC=2.911340
+PERF: core14: instrs=34083788, cycles=11682909, IPC=2.917406
+PERF: core15: instrs=34083788, cycles=11702005, IPC=2.912645
+PERF: core16: instrs=34083788, cycles=11689606, IPC=2.915735
+PERF: core17: instrs=34083788, cycles=11690029, IPC=2.915629
+PERF: core18: instrs=34083788, cycles=11704349, IPC=2.912062
+PERF: core19: instrs=34083788, cycles=11685614, IPC=2.916731
+PERF: core20: instrs=34083788, cycles=11707308, IPC=2.911326
+PERF: core21: instrs=34083788, cycles=11682908, IPC=2.917406
+PERF: core22: instrs=34083788, cycles=11702385, IPC=2.912550
+PERF: core23: instrs=34083788, cycles=11690832, IPC=2.915429
+PERF: core24: instrs=34083788, cycles=11691919, IPC=2.915158
+PERF: core25: instrs=34083788, cycles=11704900, IPC=2.911925
+PERF: core26: instrs=34083788, cycles=11686643, IPC=2.916474
+PERF: core27: instrs=34083788, cycles=11707324, IPC=2.911322
+PERF: instrs=954404224, cycles=11707623, IPC=81.519897
+Found 7 errors!
+FAILED!
+make: *** [../common.mk:102: run-simx] Error 7
+make: Leaving directory '/vortex/build/tests/regression/sgemm'

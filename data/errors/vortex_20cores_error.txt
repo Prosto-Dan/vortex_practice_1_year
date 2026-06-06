@@ -1,0 +1,147 @@
+CONFIGS=-DNUM_CLUSTERS=1 -DNUM_CORES=20 -DNUM_WARPS=8 -DNUM_THREADS=64 -DL2_ENABLE -DL3_ENABLE
+Running: CONFIGS="-DNUM_CLUSTERS=1 -DNUM_CORES=20 -DNUM_WARPS=8 -DNUM_THREADS=64 -DL2_ENABLE -DL3_ENABLE" make -C ./ci/../runtime/simx > /dev/null
+Running: OPTS="-n512" make -C "./ci/../tests/regression/sgemm" run-simx
+make: Entering directory '/vortex/build/tests/regression/sgemm'
+LD_LIBRARY_PATH=/vortex/build/runtime: VORTEX_DRIVER=simx ./sgemm -n512
+open device connection
+data type: float
+matrix size: 512x512
+allocate device memory
+A_addr=0x10000
+B_addr=0x110000
+C_addr=0x210000
+upload matrix A buffer
+upload matrix B buffer
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+Elapsed time: 2.07229e+06 ms
+download destination buffer
+verify result
+*** error: [13076] expected=122.508125, actual=-0.001327
+*** error: [13077] expected=126.240295, actual=-0.001327
+*** error: [13078] expected=118.616623, actual=-0.001327
+*** error: [13079] expected=131.057922, actual=-0.001327
+*** error: [13080] expected=123.058327, actual=-0.001327
+*** error: [13081] expected=123.539780, actual=-0.001327
+*** error: [13082] expected=121.688614, actual=-0.001327
+*** error: [13083] expected=125.495155, actual=-0.001327
+*** error: [13084] expected=126.783173, actual=-0.001327
+*** error: [13085] expected=123.277985, actual=-0.001327
+*** error: [13086] expected=123.161957, actual=-0.001327
+*** error: [13087] expected=119.468933, actual=-0.001327
+*** error: [13108] expected=126.244186, actual=-0.001327
+*** error: [26185] expected=126.420860, actual=-0.001327
+*** error: [26186] expected=131.908508, actual=-0.001327
+*** error: [26187] expected=125.364365, actual=-0.001327
+*** error: [26188] expected=127.773766, actual=-0.001327
+*** error: [26189] expected=131.748856, actual=-0.001327
+*** error: [26190] expected=124.522621, actual=-0.001327
+*** error: [26191] expected=136.329468, actual=-0.001327
+*** error: [26192] expected=127.588272, actual=-0.001327
+*** error: [26193] expected=124.622124, actual=-0.001327
+*** error: [26194] expected=128.921722, actual=-0.001327
+*** error: [26195] expected=135.349777, actual=-0.001327
+*** error: [26196] expected=127.457748, actual=-0.001327
+*** error: [26217] expected=128.661453, actual=-0.001327
+*** error: [39294] expected=122.992149, actual=-0.001327
+*** error: [39295] expected=125.904167, actual=-0.001327
+*** error: [39296] expected=130.633957, actual=-0.001327
+*** error: [39297] expected=133.297791, actual=-0.001327
+*** error: [39298] expected=127.425125, actual=-0.001327
+*** error: [39299] expected=124.822800, actual=-0.001327
+*** error: [39300] expected=124.804520, actual=-0.001327
+*** error: [39301] expected=131.137650, actual=-0.001327
+*** error: [39302] expected=125.059540, actual=-0.001327
+*** error: [39303] expected=121.140099, actual=-0.001327
+*** error: [39304] expected=127.221130, actual=-0.001327
+*** error: [39305] expected=127.433861, actual=-0.001327
+*** error: [39326] expected=130.839386, actual=-0.001327
+*** error: [52403] expected=126.550789, actual=-0.001327
+*** error: [52404] expected=136.507996, actual=-0.001327
+*** error: [52405] expected=134.366211, actual=-0.001327
+*** error: [52406] expected=131.808121, actual=-0.001327
+*** error: [52407] expected=130.138657, actual=-0.001327
+*** error: [52408] expected=132.948029, actual=-0.001327
+*** error: [52409] expected=136.181656, actual=-0.001327
+*** error: [52410] expected=131.514923, actual=-0.001327
+*** error: [52411] expected=126.408234, actual=-0.001327
+*** error: [52412] expected=134.631592, actual=-0.001327
+*** error: [52413] expected=132.523804, actual=-0.001327
+*** error: [52414] expected=134.846283, actual=-0.001327
+*** error: [65507] expected=128.632385, actual=-0.001327
+*** error: [65508] expected=121.146446, actual=-0.001327
+*** error: [65509] expected=126.239693, actual=-0.001327
+*** error: [65510] expected=118.222771, actual=-0.001327
+*** error: [65511] expected=129.293579, actual=-0.001327
+*** error: [65512] expected=132.161667, actual=-0.001327
+*** error: [65513] expected=131.430313, actual=-0.001327
+*** error: [65514] expected=122.574738, actual=-0.001327
+*** error: [65515] expected=129.893219, actual=-0.001327
+*** error: [65516] expected=129.276428, actual=-0.001327
+*** error: [65517] expected=130.419998, actual=-0.001327
+*** error: [65518] expected=119.745934, actual=-0.001327
+*** error: [65519] expected=121.539093, actual=-0.001327
+*** error: [78614] expected=118.930092, actual=-0.001327
+*** error: [78615] expected=129.339447, actual=-0.001327
+*** error: [78616] expected=128.238922, actual=-0.001327
+*** error: [78617] expected=129.337128, actual=-0.001327
+*** error: [78618] expected=124.494492, actual=-0.001327
+*** error: [78619] expected=123.823532, actual=-0.001327
+*** error: [78620] expected=126.664413, actual=-0.001327
+*** error: [78621] expected=123.015015, actual=-0.001327
+*** error: [78622] expected=124.089279, actual=-0.001327
+*** error: [78623] expected=120.538422, actual=-0.001327
+*** error: [78624] expected=122.987961, actual=-0.001327
+*** error: [78625] expected=133.740051, actual=-0.001327
+*** error: [78626] expected=126.423820, actual=-0.001327
+*** error: [91721] expected=128.218079, actual=-0.001327
+*** error: [91722] expected=131.595688, actual=-0.001327
+*** error: [91723] expected=123.943863, actual=-0.001327
+*** error: [91724] expected=129.174026, actual=-0.001327
+*** error: [91725] expected=128.165207, actual=-0.001327
+*** error: [91726] expected=127.165947, actual=-0.001327
+*** error: [91727] expected=134.271362, actual=-0.001327
+*** error: [91728] expected=128.029572, actual=-0.001327
+*** error: [91729] expected=122.190254, actual=-0.001327
+*** error: [91730] expected=126.398155, actual=-0.001327
+*** error: [91731] expected=130.890274, actual=-0.001327
+*** error: [91732] expected=127.441010, actual=-0.001327
+*** error: [91733] expected=131.963165, actual=-0.001327
+*** error: [104828] expected=135.160309, actual=-0.001327
+*** error: [104829] expected=144.264435, actual=-0.001327
+*** error: [104830] expected=127.745712, actual=-0.001327
+*** error: [104831] expected=130.340607, actual=-0.001327
+*** error: [104832] expected=132.772598, actual=-0.001327
+*** error: [104833] expected=139.370911, actual=-0.001327
+*** error: [104834] expected=135.059753, actual=-0.001327
+*** error: [104835] expected=126.956024, actual=-0.001327
+*** error: [104836] expected=127.557381, actual=-0.001327
+*** error: [104837] expected=134.488205, actual=-0.001327
+cleanup
+PERF: core0: instrs=47543318, cycles=11666893, IPC=4.075062
+PERF: core1: instrs=47543318, cycles=11663122, IPC=4.076380
+PERF: core2: instrs=47543318, cycles=11670271, IPC=4.073883
+PERF: core3: instrs=47543318, cycles=11667112, IPC=4.074986
+PERF: core4: instrs=47536048, cycles=11671447, IPC=4.072850
+PERF: core5: instrs=47536048, cycles=11666950, IPC=4.074419
+PERF: core6: instrs=47536048, cycles=11662188, IPC=4.076083
+PERF: core7: instrs=47536048, cycles=11671724, IPC=4.072753
+PERF: core8: instrs=47536048, cycles=11664638, IPC=4.075227
+PERF: core9: instrs=47536048, cycles=11671688, IPC=4.072765
+PERF: core10: instrs=47536048, cycles=11666965, IPC=4.074414
+PERF: core11: instrs=47536048, cycles=11662187, IPC=4.076084
+PERF: core12: instrs=47536048, cycles=11674477, IPC=4.071793
+PERF: core13: instrs=47536048, cycles=11664635, IPC=4.075228
+PERF: core14: instrs=47536048, cycles=11671834, IPC=4.072714
+PERF: core15: instrs=47536048, cycles=11670792, IPC=4.073078
+PERF: core16: instrs=47536048, cycles=11662209, IPC=4.076076
+PERF: core17: instrs=47536048, cycles=11670273, IPC=4.073259
+PERF: core18: instrs=47536048, cycles=11664384, IPC=4.075316
+PERF: core19: instrs=47536048, cycles=11671086, IPC=4.072976
+PERF: instrs=950750040, cycles=11674477, IPC=81.438339
+Found 259 errors!
+FAILED!
+make: *** [../common.mk:102: run-simx] Error 3
+make: Leaving directory '/vortex/build/tests/regression/sgemm'
