@@ -1,0 +1,4 @@
+sgemm vortex2: 512x512
+sgemm: /home/pravdan/git/vortex/sim/simx/types.h:1581: vortex::TxCrossBar<Type>::TxCrossBar(const vortex::SimContext&, const char*, uint32_t, uint32_t, std::function<unsigned int(const Type&)>, uint32_t) [with Type = vortex::MemReq; uint32_t = unsigned int]: Assertion `num_inputs <= 64' failed.
+Aborted (core dumped)
+make: *** [../common.mk:190: run-simx] Error 134
