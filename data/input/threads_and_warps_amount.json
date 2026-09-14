@@ -13,5 +13,5 @@
         "warps": [2, 4, 8, 16],
         "threads": [16, 32, 64]
     },
-    "execution": "./ci/blackbox.sh --clusters={clusters} --cores={cores} --warps={warps} --threads={threads} --l2cache --l3cache --app={app} --driver={driver} --args="-n{matrix_size}""
+    "execution": "./ci/blackbox.sh --clusters={clusters} --cores={cores} --warps={warps} --threads={threads} --l2cache --l3cache --app={app} --driver={driver} --args=-n{matrix_size}"
 }
