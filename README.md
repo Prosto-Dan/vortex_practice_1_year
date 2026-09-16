@@ -5,8 +5,8 @@
 При тестировании использовались:
 - Vortex 2.2
 - Docker Engine 29.5.2
-– Vortex 3.0
-– Docker Engine 29.7.2
+- Vortex 3.0
+- Docker Engine 29.7.2
 
 ### Структура репозитория
     data/
